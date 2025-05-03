@@ -88,7 +88,7 @@ The schema that I inferred in an automated fashion (below) is very high quality.
 ### Information Extraction
 Information extraction was of moderate quality; there were frequent errors. Many of these errors are small and understandable. Many errors could be solved with more advanced constrained generation, in which only the only text that could fill slots in a record is exact quotations from the source text. Here we mark the correct and incorrect information in the extracted record:
 
-![IE_errors](diagrams/ie_errors.png)
+![IE_errors](diagrams/ie_errors2.png)
 
 ## Challenges & Solutions
 
