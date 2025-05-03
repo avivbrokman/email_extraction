@@ -34,7 +34,7 @@ The goal of IE here is to automatically generate structured records, which follo
 ## How good is this system?
 Here we examine one email as it passes through the pipeline. Here is the raw image:
 
-![raw](80909413.jpg)
+![raw](truncated_80909413.png)
 ### OCR
 The OCR was nearly perfect, as we can see in the results below.
 
