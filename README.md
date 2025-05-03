@@ -41,7 +41,7 @@ The OCR was nearly perfect, as we can see in the results below.
 ![raw](ocr_80909413.png)
 
 ### Schema Inference
-The schema that I inferred in an automated fashion (below) is very high quality. This may have been particularly successful because the LLM is surely familiar with the format of emails. A fun experiment would be to try generating a schema without any sample documents.
+The schema that I inferred in an automated fashion (below) is very high quality. This may have been particularly successful because the LLM is surely familiar with the format of emails. An illuminating experiment would be to try generating a schema without any sample documents.
 
 ```
 {
