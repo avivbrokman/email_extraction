@@ -108,10 +108,32 @@ If you'd like to reproduce the full pipeline:
 1. Download images from Kaggle
 2. Upload them to Colab or your own compute environment
 
-However, I have included **three source images** from the dataset, which is the minimum required to run all notebooks.
-
 ### Software
-As discussed earlier, I had to resort to a Colab notebook for running PaddleOCR, so I ended up running everything in Colab. To run 
+As discussed earlier, I had to resort to a Colab notebook for running PaddleOCR, so I ended up running everything in Colab. The notebooks are:
+
+1. OCR.ipynb
+2. schema_inference.ipynb
+3. information_extraction.ipynb
+
+#### Specific Notes
+- `schema_inference.ipynb` and `information_extraction.ipynb` both require the use of the `meta-llama/Llama-3.2-1B-Instruct` LLM, which requires you to request permission to access it through the huggingface website: https://huggingface.co/meta-llama/Llama-3.2-1B-Instruct. Permission is granted quickly in my experience. You then use a secret token to login and gain access to the model when you want to use it. There is a well-marked cell in each of the two notebooks that instructs the user where to input the secret token.
+- `schema_inference.ipynb` and `information_extraction.ipynb` will be slow unless the user connects to a GPU. Colab comes with some free credits, and if you haven't used them up, it's very simple to connect to a T4 GPU, as I did.
+- In all three notebooks, the user uploads files semi-manually. Any cell with a `files.load()` command will prompt the user to locate an appropriate directory (check the cell's comments) and upload files.
+
+#### Usage 
+1. Open OCR.ipynb.
+2. Run OCR.ipynb. Upload files from `data/` directory when prompted.
+3. Download output files from working directory to `ocr_results/` (empty the directory before doing so).
+4. Open schema_inference.ipynb.
+5. Connect to T4 GPU.
+6. Run schema_inference.ipynb. Upload files from `ocr_results/` directory when prompted.
+7. Download output file from working directory to `schema/` (empty the directory before doing so).
+8. Open information_extraction.ipynb.
+9. Connect to T4 GPU.
+10. Run information_extraction.ipynb. Upload `schema/schema.json` when prompted. Upload files from `ocr_results/` directory when prompted.
+11. Download output files from `info/` directory to `extracted_records/` (empty the directory before doing so).
+
+I have provided the intermediate and final results for the three sample emails in the corresponding directories so nothing needs to be downloaded from Colab, if the user wishes—it is simpler.
 
 
 
