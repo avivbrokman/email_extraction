@@ -96,3 +96,24 @@ Information extraction was of moderate quality; there were frequent errors. Many
 - I am familiar with computer vision research, I have limited hands-on experience—I previously specialized in natural language processing, so I had to learn what worked and what didn't. I originally tried to use **Tesseract** for OCR, but the results were poor. I then tried to switch to PaddleOCR, but evidently it is rarely compatible with Apple computers (what I own) despite the existence of installation instructions for them. This is why I resorted to **Colab** notebooks, where I could run Tesseract, instead of my usual VSCode + GitHub stack.
 - During Schema Inference, prompts I wrote returned generations that were variously **nonsensical**, **unruly**, and **repetitive**. Unlike OCR, natural language processing is my specialty, and I was familiar with these issues as well as tricks of the trade to solve them; this was a lesser challenge. A combination of an **imperious tone** and **extreme seriousness** of certain details in the prompt as well as **deterministic generation** solved the issue.
 - Vanilla use of generation with LlaMa 3 usually resulted in **invalid JSON** objects. I knew that **constrained generation** was the solution for this, and I found a library (`outlines`) that supports it.
+
+## Usage
+### Data
+This project uses the publicly available dataset from Kaggle:  
+https://www.kaggle.com/datasets/suvroo/scanned-images-dataset-for-ocr-and-vlm-finetuning
+
+The full dataset is **not included** in the repository.
+
+If you'd like to reproduce the full pipeline:
+1. Download images from Kaggle
+2. Upload them to Colab or your own compute environment
+
+However, I have included **three source images** from the dataset, which is the minimum required to run all notebooks.
+
+### Software
+As discussed earlier, I had to resort to a Colab notebook for running PaddleOCR, so I ended up running everything in Colab. To run 
+
+
+
+
+
