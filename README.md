@@ -3,9 +3,9 @@
 ## Problem
 **Task:** A collection of emails have been printed and scanned. I believe it will be useful to me to have **create a semi-structured database** of the information contained in the emails.
 
-Here is an example of an email and what we wnat to extract from it:
+Here is an example of an email and what we want to extract from it:
 
-![IE_example](IE_example.png)
+![IE_example](diagrams/IE_example.png)
 
 
 Doing this by hand would be tedious! Let's use **AI** creatively instead. I could choose a supervised approach, in which I annotate some number of documents myself and then train models on them. This is still fairly tedious, so I designed an **unsupervised** approach in which I don't need to annotate data.
@@ -20,7 +20,7 @@ My approach can be boiled down to 3 steps (and 3 corresponding Colab notebooks):
 
 Essentially, images are converted to text, a schema is inferred from the text, and then information is extracted from the text according to the specified schema.
 
-![concept_diagram](concept_diagram.png)
+![concept_diagram](diagrams/concept_diagram.png)
 
 ### 1. Optical Character Recognition (OCR)
 The goal of OCR is to convert the text present in an image into textual data. I used **PaddleOCR**, which contains a pipeline of neural networks (CNNs and RNNs) that detect regions of an image containing text and then extract the text within them.
@@ -34,11 +34,11 @@ The goal of IE here is to automatically generate structured records, which follo
 ## How good is this system?
 Here we examine one email as it passes through the pipeline. Here is the raw image:
 
-![raw](truncated_80909413.png)
+![raw](diagrams/truncated_80909413.png)
 ### OCR
 The OCR was nearly perfect, as we can see in the results below.
 
-![raw](ocr_80909413.png)
+![raw](diagrams/ocr_80909413.png)
 
 ### Schema Inference
 The schema that I inferred in an automated fashion (below) is very high quality. This may have been particularly successful because the LLM is surely familiar with the format of emails. An illuminating experiment would be to try generating a schema without any sample documents.
@@ -88,7 +88,7 @@ The schema that I inferred in an automated fashion (below) is very high quality.
 ### Information Extraction
 Information extraction was of moderate quality; there were frequent errors. Many of these errors are small and understandable. Many errors could be solved with more advanced constrained generation, in which only the only text that could fill slots in a record is exact quotations from the source text. Here we mark the correct and incorrect information in the extracted record:
 
-![IE_errors](ie_errors.png)
+![IE_errors](diagrams/ie_errors.png)
 
 ## Challenges & Solutions
 
